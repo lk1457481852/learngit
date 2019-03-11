@@ -1,0 +1,33 @@
+json对象的处理
+
+同名验证
+
+第一步先加入阿里巴巴提供的fastjson jar包
+
+定义一个方法在方法上加上@responseBody:
+它的作用就是把被标注的方法的返回的数据输出响应流中，客户端获取并显示
+
+定义一个HashMap集合 通过键值得方式存方结果，并通过json返回
+
+
+json数据传递
+   1.根据id异步处理查详情返回到页面显示， , 
+   页面中文乱码 requestMapping 的属性produces设置编码格式
+    2.全局消息转换器 在添加bean引入StringhttpMessageConveter
+
+ 日期格式
+  实体类 添加注解jsonfieid(format="yyyy-MM-dd")
+   配置fastjson消息转换器fastjsonhttpMessageConverter
+
+数据转换格式化
+1.DateTimeFormat
+
+2.
+日期类型自动转换
+定义一个负责将字符转换成指定格式的时间对象Date自定义转换器
+
+实现Converter接口
+引入ConversionServiceFactroyBean
+
+3.initBinder注解 参数WebDataBinder 通过reg
+
